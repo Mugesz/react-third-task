@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({ onFilterChange,setFilterStatus,filterStatus,user }) => {
+const Filter = ({ onFilterChange,setFilterStatus,filterStatus }) => {
 
   const handleFilterChange = (status) => {
     setFilterStatus(status);
