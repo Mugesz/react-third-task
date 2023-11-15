@@ -137,13 +137,14 @@ const Input = ({ user, setUser }) => {
           <Filter onFilterChange={handleFilterChange}
             setFilterStatus={setFilterStatus}
             filterStatus={filterStatus}
+            user={user}
           />
         </div>
       </div>
 
     
-      <div className="row">
-        <div className="col">
+      <div className="container">
+        <div className="row">
           {user.map((item, index) => {
             if (filterStatus === 'All' || filterStatus === item.status) {
               return (

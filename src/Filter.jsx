@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Filter = ({ onFilterChange,setFilterStatus,filterStatus }) => {
+const Filter = ({ onFilterChange,setFilterStatus,filterStatus,user }) => {
 
   const handleFilterChange = (status) => {
     setFilterStatus(status);
@@ -11,13 +11,14 @@ const Filter = ({ onFilterChange,setFilterStatus,filterStatus }) => {
     <div>
       <label htmlFor="filter">Filter Status: </label>
       <select
+       className={`${filterStatus === 'Completed' ? 'light-green-sts': filterStatus === 'All'? 'sky-blue'  : 'bg-danger'}`}
         id="filter"
         value={filterStatus}
         onChange={(e) => handleFilterChange(e.target.value)}
       >
-        <option value="All">All</option>
-        <option value="Completed">Completed</option>
-        <option value="Not Completed">Not Completed</option>
+        <option  value="All">All</option>
+        <option style={{ backgroundColor: "#13ad89" }} value="Completed">Completed</option>
+        <option className="btn btn-danger" value="Not Completed">Not Completed</option>
       </select>
     </div>
   );
