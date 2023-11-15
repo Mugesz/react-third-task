@@ -81,17 +81,14 @@ const Input = ({ user, setUser }) => {
   };
 
   const handleStatusChange = (index, status) => {
-    // Update the status of the user at the specified index
     const updatedUser = { ...user[index], status: status };
     const updatedUserList = [...user.slice(0, index), updatedUser, ...user.slice(index + 1)];
-
-    setUser(updatedUser);
-
+  
+    setUser(updatedUserList); // Corrected line
+  
     localStorage.setItem("todolist", JSON.stringify(updatedUserList));
-
   };
-
-
+  
   return (
     <form>
       <div className="input-group justify-content-center my-5">
