@@ -64,7 +64,6 @@ const Input = ({ user, setUser }) => {
     setUser(reducedTodos);
 
     localStorage.setItem("todolist", JSON.stringify(reducedTodos));
-    setUser(reducedTodos);
   };
 
 
